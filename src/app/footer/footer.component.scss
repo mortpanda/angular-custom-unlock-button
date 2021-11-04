@@ -1,0 +1,124 @@
+.container{
+    text-align: center;
+}
+
+.footer{
+    background-attachment: fixed;
+    position: relative;
+    line-height: 20px;
+    background-color: #00297A;
+    font-family: "ABCWhyte Book","-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif;
+}
+.footer nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.footer nav > ul > li{
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 15px 3px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.footer nav > ul a:not(.btn) {
+    color: #FFFFFF;
+    display: block;
+    margin-bottom: 3px;
+    line-height: 1.6;
+    opacity: .8;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.footer nav > ul a:not(.btn):hover,
+.footer nav > ul a:not(.btn):focus {
+  color: #FFFFFF;
+  opacity: 1;
+}
+.footer .copyright {
+  color: #FFFFFF;
+  padding: 10px 0px;
+  font-size: 14px;
+  margin: 15px 3px;
+  line-height: 20px;
+  text-align: center;
+}
+.footer .heart{
+    color: #00297A;
+}
+
+.footer{
+    background-color: #00297A;
+    // line-height: $line-height;
+
+    &.footer-black{
+        h4{
+            color: #FFFFFF;
+        }
+    }
+
+    .links{
+        display: inline-block;
+
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-weight: b;
+
+            > li{
+                display: inline-block;
+                padding-right: 20px;
+            }
+            > li:last-child{
+                padding-right: 0px;
+            }
+
+            // a:not(.btn){
+            //     color: $font-color;
+            //     display: block;
+            //     font-size: $font-size-h6;
+            //     margin-bottom: 3px;
+            //     &:hover,
+            //     &:focus{
+            //         color: $default-states-color;
+            //     }
+            // }
+
+            &.uppercase-links{
+                text-transform: uppercase;
+            }
+            &.stacked-links{
+                margin-top: 10px;
+
+                > li{
+                    display: block;
+                    line-height: 26px;
+                }
+                h4{
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+
+    // hr{
+    //     border-color: $medium-gray;
+    //     border-width: 1px 0 0;
+    //     margin-top: 5px;
+    //     margin-bottom: 5px;
+    // }
+    .copyright{
+        color: #FFFFFF;
+        font-size: 0.9em;
+        ul > li{
+            padding-right: 0px;
+        }
+    }
+    // .title{
+    //     color: $default-states-color;
+    // }
+}
