@@ -21,28 +21,31 @@ function OktaWidget() {
             registration: true,                           // Enable self-service registration flow
             rememberMe: false,                             // Setting to false will remove the checkbox to save username
             router: true,
-            selfServiceUnlock: true
+            selfServiceUnlock: true,
+            smsRecovery: true,
+            callRecovery: true,
+
         },
         baseUrl: "https://kent-nagao-test.oktapreview.com",
-        // redirectUri: "",
-        // clientId: "",   //CLIENT ID GOES HERE
-        // authParams: {
-        //     issuer: '',
-        //     issuer: 'default',
-        //     responseType: ['token', 'id_token'],
-        //     strPkce: false,
-        //     responseMode: 'fragment',
-        //     display: 'page',
-        //     scope: ['openid', 'email', 'profile']
-        //},
+        redirectUri: "https://localhost:4200/",
+        clientId: "0oa1wg94qd3UxPGQ31d7",   //CLIENT ID GOES HERE
+        authParams: {
+            issuer: 'https://kent-nagao-test.oktapreview.com/oauth2/aus14xmr8soQUuZda1d7',
+            responseType: ['token', 'id_token'],
+            Pkce: true,
+            responseMode: 'fragment',
+            pkce: 'true',
+            scope: ['openid', 'email', 'profile']
+        },
     });
 
     oktaSignIn.on('afterRender', function (context) {
         document.getElementById("test_btn_div").style.visibility = 'hidden';
         document.getElementById("buttonTitle").style.visibility = 'hidden';
-        
+
         console.log(context.controller);
-        if (context.controller == 'account-unlock-email-sent') {
+        //if (context.controller == 'account-unlock-email-sent') {
+        if (context.controller == 'unlock-email-sent') {
 
             document.getElementById('okta-signin-container').remove();
             document.getElementById("test_btn_div").style.visibility = 'visible';
